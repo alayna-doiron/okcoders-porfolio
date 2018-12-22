@@ -1,0 +1,31 @@
+body {
+	width: 500px;
+	margin: 10%;
+}
+
+.container{
+	max-width: 500px;
+
+}
+
+.calculator {
+	margin: 10%;
+	padding: 20px;
+	background-color: #658BE5;
+	border: black;
+}
+
+.button{
+	width: 108%
+}
+
+.calc-value {
+	border-radius: 15px;
+	height: 40px;
+	border: none;
+}
+
+.input {
+	border-radius: 5px;
+	border: none;
+}
