@@ -2,10 +2,10 @@ $(document).ready(()=> {
 	console.log('document is ready');
 
 var result = [];
-
+var thisNum;
 $('.button.number').on('click', function () {
-		var thisNum = $(this).val();
-	 result.push(thisNum);
+		if(thisNum) thisNum = thisNum + $(this).val();
+		else thisNum = $(this).val();
 	 $('#calc-total').val(thisNum);
 	 $('#calc-total').append(thisNum);
 	 console.log(result);
@@ -13,12 +13,15 @@ $('.button.number').on('click', function () {
 
 $('.button.operator').on('click', function () {
 		var operation = $(this).val();
-	 result.push(operation);
-	 console.log(result);
+		result.push(thisNum);
+		thisNum = null;
+	 	result.push(operation);
+	 	console.log(result);
 });
 
 
 	$('.button.equals').click(()=>{
+		result.push(thisNum);
 		var addTotal = parseFloat(result[0]) + parseFloat(result[2]);
 		var subTotal = parseFloat(result[0]) - parseFloat(result[2]);
 		var multTotal = parseFloat(result[0]) * parseFloat(result[2]);
@@ -38,6 +41,7 @@ $('.button.operator').on('click', function () {
 	});
 
 		$('.button.clear').click(()=>{
+			thisNum = null;
 			$('.calc-value').val('');
 			result = [];
 			console.log(result);
@@ -48,45 +52,3 @@ $('.button.operator').on('click', function () {
 		});
 
 	});
-
-
-// 	$('.button').click(() => {
-// 		var buttonValue = $(this).val();
-// 		$('.calc-value').append(`${buttonValue}`);
-// 		$('.calc-value').val('');
-// 	});
-//
-// 	$('.button.subtract').click(()=>{
-// 		var num1 = $('.input.1').val();
-// 		var num2 = $('.input.2').val();
-// 		var total = parseFloat(num1) - parseFloat(num2);
-// 		$('.calc-value').append(total);
-// 	});
-//
-// 	$('.button.multiply').click(()=>{
-// 		var num1 = $('.input.1').val();
-// 		var num2 = $('.input.2').val();
-// 		var total = parseFloat(num1) * parseFloat(num2);
-// 		$('.calc-value').append(total);
-// 	});
-//
-// 	$('.button.divide').click(()=>{
-// 		var num1 = $('.input.1').val();
-// 		var num2 = $('.input.2').val();
-// 		var total = parseFloat(num1) / parseFloat(num2);
-// 		$('.calc-value').append(total);
-// 	});
-//
-// 	$('.button.clear').click(()=>{
-// 		$('.input.1').val('');
-// 		$('.input.2').val('');
-// 		$('.calc-value').val('');
-// 	});
-//
-
-//
-// });
-
-//Problems to fix:
-// 1) Single button at a time
-// why doesn't divide work?

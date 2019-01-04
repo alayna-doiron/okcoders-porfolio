@@ -13,6 +13,10 @@ $('.shopping-list').click(() => {
 	window.location.href = 'mod3-week3/shopping-list.html';
 });
 
+$('.tip-calculator').click(() => {
+	window.location.href = 'mod3-week4/tip-calculator.html';
+});
+
 $('.show-sidenav').click(() => {
 	$('.sidenav').show();
 	$('.sidenav-collapsed').hide();

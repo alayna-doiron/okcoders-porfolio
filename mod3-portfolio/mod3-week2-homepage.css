@@ -18,6 +18,12 @@ p {
 	font-family: 'Poppins';
 }
 
+.home-title {
+	color: white;
+	margin-top: 100px;
+
+}
+
 
 .smaller-logo {
 	max-width: 65%;
@@ -62,9 +68,3 @@ p {
 	color: white;
 
 }
-
-/*
-This will show the box shadow when hovered over if you want to use it
-.sidenav:hover {
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-} */
